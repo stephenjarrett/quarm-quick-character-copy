@@ -33,15 +33,15 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ProjectQuarmCharacterManager-Windows
-        path: dist/ProjectQuarmCharacterManager.exe
+        name: QuarmQuickCharacterCopy-Windows
+        path: dist/QuarmQuickCharacterCopy.exe
         
-    - name: Create Release Asset
+    - name: Upload Release Asset
       if: github.event_name == 'release'
       uses: softprops/action-gh-release@v1
       with:
-        files: dist/ProjectQuarmCharacterManager.exe
-        draft: false
-        prerelease: false
-        token: ${{ secrets.GITHUB_TOKEN }}
+        files: dist/QuarmQuickCharacterCopy.exe
+        generate_release_notes: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

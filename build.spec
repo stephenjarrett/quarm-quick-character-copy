@@ -27,7 +27,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='ProjectQuarmCharacterManager',
+    name='QuarmQuickCharacterCopy',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

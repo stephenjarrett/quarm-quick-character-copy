@@ -17,7 +17,7 @@ A modern GUI tool for managing character configurations in Project Quarm. Easily
 ### Option 1: Download Executable (Recommended - No Python Required!)
 
 1. Go to the [Releases](https://github.com/stephenjarrett/quarm-quick-character-copy/releases) page
-2. Download `ProjectQuarmCharacterManager.exe` from the latest release
+2. Download `QuarmQuickCharacterCopy.exe` from the latest release
 3. Run the executable - no Python installation required!
 
 ### Option 2: Run from Source
