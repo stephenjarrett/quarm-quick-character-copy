@@ -6,10 +6,10 @@ from pathlib import Path
 from typing import Optional
 
 
-# Use standard Windows AppData directory for config
-# This creates: C:\Users\<Username>\AppData\Roaming\QuarmQuickCharacterCopy\config.json
+# Use standard Windows AppData\Local directory for config
+# This creates: C:\Users\<Username>\AppData\Local\QuarmQuickCharacterCopy\config.json
 APP_NAME = "QuarmQuickCharacterCopy"
-CONFIG_DIR = Path(os.getenv('APPDATA', os.path.expanduser('~'))) / APP_NAME
+CONFIG_DIR = Path(os.getenv('LOCALAPPDATA', os.path.expanduser('~'))) / APP_NAME
 CONFIG_FILE = CONFIG_DIR / "config.json"
 
 # Create config directory if it doesn't exist
