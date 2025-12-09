@@ -1,11 +1,19 @@
 """Configuration management for the application."""
 
 import json
+import os
 from pathlib import Path
 from typing import Optional
 
 
-CONFIG_FILE = Path("config.json")
+# Use standard Windows AppData directory for config
+# This creates: C:\Users\<Username>\AppData\Roaming\QuarmQuickCharacterCopy\config.json
+APP_NAME = "QuarmQuickCharacterCopy"
+CONFIG_DIR = Path(os.getenv('APPDATA', os.path.expanduser('~'))) / APP_NAME
+CONFIG_FILE = CONFIG_DIR / "config.json"
+
+# Create config directory if it doesn't exist
+CONFIG_DIR.mkdir(exist_ok=True)
 
 
 def load_saved_directory() -> Optional[str]:
