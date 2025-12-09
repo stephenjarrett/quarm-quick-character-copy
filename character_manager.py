@@ -1,6 +1,7 @@
 """Main application class for managing character configurations."""
 
 import os
+import sys
 import shutil
 from typing import Dict
 from datetime import datetime
@@ -20,6 +21,29 @@ class CharacterManager:
         self.root = root
         self.root.title("Project Quarm Character Manager")
         self.root.geometry("900x650")
+        
+        # Set window icon (for title bar and taskbar)
+        try:
+            # Try to find icon.ico relative to the script or executable
+            if getattr(sys, 'frozen', False):
+                # Running as compiled executable
+                base_path = sys._MEIPASS
+            else:
+                # Running as script
+                base_path = os.path.dirname(os.path.abspath(__file__))
+            
+            icon_path = os.path.join(base_path, 'icon.ico')
+            if os.path.exists(icon_path):
+                # Access the underlying Tk window for iconbitmap
+                self.root.iconbitmap(icon_path)
+            else:
+                # Try current directory as fallback
+                icon_path = 'icon.ico'
+                if os.path.exists(icon_path):
+                    self.root.iconbitmap(icon_path)
+        except Exception:
+            # If icon setting fails, continue without it
+            pass
         
         self.quarm_dir = load_saved_directory()
         self.characters: Dict[str, Dict[str, str]] = {}

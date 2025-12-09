@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    permissions:
+      contents: write  # Required to upload release assets
     
     steps:
     - name: Checkout code
@@ -41,6 +43,5 @@ jobs:
         files: dist/ProjectQuarmCharacterManager.exe
         draft: false
         prerelease: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
 

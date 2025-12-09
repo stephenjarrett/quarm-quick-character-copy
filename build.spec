@@ -6,7 +6,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('icon.ico', '.')],  # Include icon.ico in the bundle
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
