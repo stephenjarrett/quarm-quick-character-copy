@@ -19,7 +19,7 @@ class CharacterManager:
     
     def __init__(self, root):
         self.root = root
-        self.root.title("Project Quarm Character Manager")
+        self.root.title("Quarm Quick Character Copy")
         self.root.geometry("900x650")
         
         # Set window icon (for title bar and taskbar)

@@ -1,4 +1,4 @@
-# Project Quarm Character Configuration Manager
+# Quarm Quick Character Copy
 
 A modern GUI tool for managing character configurations in Project Quarm. Easily copy UI layouts, spellsets, and config files between characters, create new characters, and export configurations to ZIP files.
 
